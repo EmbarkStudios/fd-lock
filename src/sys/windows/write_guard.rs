@@ -1,5 +1,4 @@
-use windows_sys::Win32::Foundation::HANDLE;
-use windows_sys::Win32::Storage::FileSystem::UnlockFile;
+use crate::sys::windows::bindings::{UnlockFile, HANDLE};
 
 use std::ops;
 use std::os::windows::prelude::*;

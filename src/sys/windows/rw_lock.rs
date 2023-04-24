@@ -1,10 +1,8 @@
 use std::io::{self, Error, ErrorKind};
 use std::os::windows::io::AsRawHandle;
 
-use windows_sys::Win32::Foundation::ERROR_LOCK_VIOLATION;
-use windows_sys::Win32::Foundation::HANDLE;
-use windows_sys::Win32::Storage::FileSystem::{
-    LockFileEx, LOCKFILE_EXCLUSIVE_LOCK, LOCKFILE_FAIL_IMMEDIATELY,
+use crate::sys::windows::bindings::{
+    LockFileEx, ERROR_LOCK_VIOLATION, HANDLE, LOCKFILE_EXCLUSIVE_LOCK, LOCKFILE_FAIL_IMMEDIATELY,
 };
 
 use super::utils::{syscall, Overlapped};
